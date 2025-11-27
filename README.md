@@ -18,7 +18,7 @@ Your layout and tasks are saved locally.
 
 ## ❓ How do I use this?
 
-You have two options: either use the hosted instance at (temp URL), which is good for testing the app but its reliability isn't guaranteed, as it may go down if overloaded.  
+You have two options: either use the hosted instance at (https://listdesk.nabrious.workers.dev/)[https://listdesk.nabrious.workers.dev/], which is good for testing the app but its reliability isn't guaranteed, as it may go down if overloaded.  
 
 Alternatively, you can follow the installation instructions below to run ListDesk locally.
 
