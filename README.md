@@ -3,7 +3,7 @@ ListDesk is (to be) an infinite, free-form canvas for organizing your life with 
 > [!note]
 > Currently, you can do all of the above except zoom and the desk isn't infinite yet.
 
-## ⭐ Features:
+## ⭐ Features
 **🖼 Infinite Desk (soon)**  
 Scroll in any direction and place lists wherever you want.  
 
@@ -15,6 +15,11 @@ Designed to feel instant with just enough eyecandy.
 
 **💾 Saves Locally (soon)**  
 Your layout and tasks are saved locally.
+
+## 📹 Demo Video
+https://github.com/user-attachments/assets/082816e7-747f-4f45-b72d-193bbc79bb8b
+
+
 
 ## ❓ How do I use this?
 
