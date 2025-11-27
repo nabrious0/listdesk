@@ -13,7 +13,7 @@ Every list can be dragged, positioned, and rearranged freely.
 **🍃 Lightweight & Fast**  
 Designed to feel instant with just enough eyecandy.
 
-**💾 Saves Locally**  
+**💾 Saves Locally (soon)**  
 Your layout and tasks are saved locally.
 
 ## ❓ How do I use this?
