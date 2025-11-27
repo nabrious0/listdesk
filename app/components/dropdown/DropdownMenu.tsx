@@ -25,18 +25,6 @@ interface DropdownMenuItemProps {
 	onClick?: () => void;
 }
 
-interface DropdownMenuSubProps {
-	trigger: React.ReactNode;
-	children: React.ReactNode;
-	side?: "top" | "right" | "bottom" | "left";
-	align?: "end" | "center" | "start";
-	alignOffset?: number;
-	sideOffset?: number;
-	initial?: Target;
-	animate?: Target;
-	exit?: Target;
-}
-
 export const DropdownMenuRoot = React.forwardRef<
 	HTMLButtonElement,
 	DropdownMenuRootProps
@@ -101,12 +89,13 @@ export const DropdownMenuContent = React.forwardRef<
 export const DropdownMenuItem = React.forwardRef<
 	HTMLDivElement,
 	DropdownMenuItemProps
->(function DropdownMenuItem({ children, onClick }) {
+>(function DropdownMenuItem({ children, onClick }, forwardedRef) {
 	return (
 		<>
 			<DropdownMenuPrimitive.Item
 				onClick={onClick}
 				className="cursor-pointer rounded-md p-1.5 px-3 transition-all ease-linear hover:bg-slate-100 active:bg-slate-200"
+				ref={forwardedRef}
 			>
 				{children}
 			</DropdownMenuPrimitive.Item>
@@ -117,10 +106,14 @@ export const DropdownMenuItem = React.forwardRef<
 export const DropdownMenuSubTrigger = React.forwardRef<
 	HTMLDivElement,
 	DropdownMenuItemProps
->(function DropdownMenuSubTrigger({ children }) {
+>(function DropdownMenuSubTrigger({ children }, forwardedRef) {
 	return (
 		<>
-			<div className="cursor-pointer rounded-md p-1.5 px-3 text-start transition-all ease-linear group-data-[state='open']/dropdown:bg-slate-100 hover:bg-slate-100 active:bg-slate-200">
+			{/* we use div here instead of DropdownMenuPrimitive.Item because using that makes menu only appear while mouse down */}
+			<div
+				ref={forwardedRef}
+				className="cursor-pointer rounded-md p-1.5 px-3 text-start transition-all ease-linear group-data-[state='open']/dropdown:bg-slate-100 hover:bg-slate-100 active:bg-slate-200"
+			>
 				<div className="flex items-center">
 					<div>{children}</div>
 					<div className="ms-auto text-slate-500">

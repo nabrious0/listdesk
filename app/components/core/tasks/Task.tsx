@@ -63,6 +63,7 @@ const Task = ({ complete, name, id, deleteTask, taskListColor }: TaskProps) => {
 	// theme task
 
 	switch (taskListColor) {
+		// white theme
 		case "white":
 			taskIncompleteColor = "text-slate-500";
 			taskIncompleteCheckboxBorderColor = "border-slate-500/50";
@@ -84,6 +85,7 @@ const Task = ({ complete, name, id, deleteTask, taskListColor }: TaskProps) => {
 			taskCompleteCheckboxShadowColor = "var(--color-azure-500)";
 			taskCompleteCheckmarkShadowColor = "drop-shadow-azure-700/80";
 			break;
+		// peach theme
 		case "peach":
 			taskIncompleteColor = "text-peach-950";
 			taskIncompleteCheckboxBorderColor = "border-peach-950/50";
@@ -109,6 +111,7 @@ const Task = ({ complete, name, id, deleteTask, taskListColor }: TaskProps) => {
 			taskCompleteCheckboxShadowColor = "var(--color-peach-950)";
 			taskCompleteCheckmarkShadowColor = "drop-shadow-peach-980";
 			break;
+		// yellow theme
 		case "yellow":
 			taskIncompleteColor = "text-yellow-600";
 			taskIncompleteCheckboxBorderColor = "border-yellow-700/50";
@@ -135,6 +138,7 @@ const Task = ({ complete, name, id, deleteTask, taskListColor }: TaskProps) => {
 			taskCompleteCheckboxShadowColor = "var(--color-yellow-900)";
 			taskCompleteCheckmarkShadowColor = "drop-shadow-yellow-900";
 			break;
+		// blue theme
 		case "blue":
 			taskIncompleteColor = "text-sky-600";
 			taskIncompleteCheckboxBorderColor = "border-sky-700/50";
@@ -161,6 +165,7 @@ const Task = ({ complete, name, id, deleteTask, taskListColor }: TaskProps) => {
 			taskCompleteCheckboxShadowColor = "var(--color-sky-900)";
 			taskCompleteCheckmarkShadowColor = "drop-shadow-sky-900";
 			break;
+		// red theme
 		case "red":
 			taskIncompleteColor = "text-red-600";
 			taskIncompleteCheckboxBorderColor = "border-red-700/50";
@@ -239,7 +244,7 @@ const Task = ({ complete, name, id, deleteTask, taskListColor }: TaskProps) => {
 								setIsComplete(false);
 							}}
 							key={"uncompleteTaskButton"}
-							className="group/check flex h-[32px] w-[32px] cursor-pointer items-center justify-center"
+							className="group/check flex h-8 w-8 cursor-pointer items-center justify-center"
 						>
 							<motion.div
 								style={{
@@ -264,7 +269,7 @@ const Task = ({ complete, name, id, deleteTask, taskListColor }: TaskProps) => {
 							onClick={() => {
 								setIsComplete(true);
 							}}
-							className="group/check flex h-[32px] w-[32px] cursor-pointer items-center justify-center"
+							className="group/check flex h-8 w-8 cursor-pointer items-center justify-center"
 						>
 							<motion.div
 								key={"completeTaskButton"}
@@ -282,7 +287,7 @@ const Task = ({ complete, name, id, deleteTask, taskListColor }: TaskProps) => {
 								setText(e.target.value);
 							}}
 							placeholder="Task Name"
-							className={`${isComplete ? `${taskCompleteColor} ${taskCompleteTextShadow} text-shadow-sm` : `${taskIncompleteColor}`} field-sizing-content min-h-[20px] max-w-full resize-none rounded-sm px-1 py-px text-sm leading-[18px] wrap-break-word ring-2 ring-transparent transition-all ease-linear focus:outline-0 ${taskNamePlaceholderColor} ${taskNameRingHoverColor} ${taskNameRingFocusColor}`}
+							className={`${isComplete ? `${taskCompleteColor} ${taskCompleteTextShadow} text-shadow-sm` : `${taskIncompleteColor}`} field-sizing-content min-h-5 max-w-full resize-none rounded-sm px-1 py-px text-sm leading-[18px] wrap-break-word ring-2 ring-transparent transition-all ease-linear focus:outline-0 ${taskNamePlaceholderColor} ${taskNameRingHoverColor} ${taskNameRingFocusColor}`}
 						/>
 						<AnimatePresence>
 							{isComplete && (
@@ -302,7 +307,7 @@ const Task = ({ complete, name, id, deleteTask, taskListColor }: TaskProps) => {
 						</AnimatePresence>
 					</div>
 					<div
-						className="pointer-events-none absolute top-0 min-h-[20px] w-full px-1 py-px text-sm leading-[18px] wrap-break-word whitespace-pre-wrap opacity-0"
+						className="pointer-events-none absolute top-0 min-h-5 w-full px-1 py-px text-sm leading-[18px] wrap-break-word whitespace-pre-wrap opacity-0"
 						ref={mirrorRef}
 					>
 						{text.split("").map((char, i) => (
@@ -311,11 +316,11 @@ const Task = ({ complete, name, id, deleteTask, taskListColor }: TaskProps) => {
 					</div>
 				</div>
 				<div
-					className={`h-[32px] w-[32px] shrink-0 ${taskDropdownOpen ? `opacity-100` : `opacity-0 group-hover/task:opacity-100`}`}
+					className={`h-8 w-8 shrink-0 ${taskDropdownOpen ? `opacity-100` : `opacity-0 group-hover/task:opacity-100`}`}
 				>
 					<DropdownMenuRoot
 						trigger={
-							<div className="group/menu -me-2 flex h-[32px] w-[32px] cursor-pointer items-center justify-center">
+							<div className="group/menu -me-2 flex h-8 w-8 cursor-pointer items-center justify-center">
 								<div
 									className={`flex h-[22px] w-[22px] items-center justify-center rounded-sm transition-all ease-linear ${taskMenuTextColor} ${taskMenuHoverColor} ${taskMenuActiveColor} ${taskMenuOpenColor}`}
 								>
