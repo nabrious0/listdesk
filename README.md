@@ -1,79 +1,31 @@
-# Welcome to React Router!
+## ListDesk
+ListDesk is (to be) an infinite, free-form canvas for organizing your life with movable to-do lists. Drag, drop, zoom, and arrange tasks anywhere. No rigid columns, no strict layouts — just an open desk where you can think visually.
+> [!note]
+> Currently, you can do all of the above except zoom and the desk isn't infinite yet.
 
-A modern, production-ready template for building full-stack React applications using React Router.
+## ⭐ Features:
+**🖼 Infinite Desk (soon)**  
+Scroll in any direction and place lists wherever you want.  
 
-## Features
+**🖱 Moveable Lists**  
+Every list can be dragged, positioned, and rearranged freely.
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+**🍃 Lightweight & Fast**  
+Designed to feel instant with just enough eyecandy.
 
-## Getting Started
+**💾 Saves Locally**  
+Your layout and tasks are saved locally.
 
-### Installation
+## ❓ How do I use this?
 
-Install the dependencies:
+You have two options: either use the hosted instance at (temp URL), which is good for testing the app but its reliability isn't guaranteed, as it may go down if overloaded.  
 
-```bash
-npm install
+Alternatively, you can follow the installation instructions below to run ListDesk locally.
+
+### Installation Instructions
 ```
-
-### Development
-
-Start the development server with HMR:
-
-```bash
+git clone https://github.com/nabrious0/listdesk/listdesk.git
+cd listdesk
+npm install
 npm run dev
 ```
-
-Your application will be available at `http://localhost:5173`.
-
-## Previewing the Production Build
-
-Preview the production build locally:
-
-```bash
-npm run preview
-```
-
-## Building for Production
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-## Deployment
-
-Deployment is done using the Wrangler CLI.
-
-To build and deploy directly to production:
-
-```sh
-npm run deploy
-```
-
-To deploy a preview URL:
-
-```sh
-npx wrangler versions upload
-```
-
-You can then promote a version to production after verification or roll it out progressively.
-
-```sh
-npx wrangler versions deploy
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
