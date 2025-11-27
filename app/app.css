@@ -1,15 +1,43 @@
 @import "tailwindcss" source(".");
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--font-sans:
+		"Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+	/* azure */
+	--color-azure-50: oklch(87.278% 0.04994 271.57);
+	--color-azure-100: oklch(83.069% 0.06681 270.78);
+	--color-azure-200: oklch(74.704% 0.10335 269.66);
+	--color-azure-300: oklch(66.311% 0.14228 269.2);
+	--color-azure-400: oklch(58.302% 0.17935 267.23);
+	--color-azure-500: oklch(51.077% 0.21544 265.42);
+	--color-azure-600: oklch(42.912% 0.18936 265.19);
+	--color-azure-700: oklch(34.677% 0.14618 265.45);
+	--color-azure-800: oklch(25.924% 0.09958 265.48);
+	--color-azure-900: oklch(16.223% 0.04776 266.13);
+	--color-azure-950: oklch(10.71% 0.0194 262.03);
+
+	/* peach */
+	--color-peach-500: oklch(94.289% 0.03477 57.614);
+	--color-peach-600: oklch(86.8% 0.08398 56.407);
+	--color-peach-700: oklch(79.925% 0.13276 54.572);
+	--color-peach-800: oklch(73.956% 0.17552 50.557);
+	--color-peach-900: oklch(67.93% 0.1956 44.584);
+	--color-peach-950: oklch(62.182% 0.17738 45.133);
+	--color-peach-980: oklch(0.5293 0.1493 45.79);
 }
 
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
+	@apply text-slate-700;
 
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
+	@media (prefers-color-scheme: dark) {
+		color-scheme: dark;
+	}
+}
+
+.note-transition,
+.note-transition * {
+	@apply transition-["background,box-shadow,color"] duration-200 ease-linear;
 }

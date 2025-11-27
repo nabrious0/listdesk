@@ -12,9 +12,13 @@
 		"typecheck": "npm run cf-typegen && react-router typegen && tsc -b"
 	},
 	"dependencies": {
+		"@phosphor-icons/react": "^2.1.10",
 		"isbot": "^5.1.31",
+		"motion": "^12.23.24",
+		"radix-ui": "^1.4.3",
 		"react": "^19.1.1",
 		"react-dom": "^19.1.1",
+		"react-draggable": "^4.5.0",
 		"react-router": "^7.9.2"
 	},
 	"devDependencies": {
@@ -24,6 +28,8 @@
 		"@types/node": "^22",
 		"@types/react": "^19.1.13",
 		"@types/react-dom": "^19.1.9",
+		"prettier": "^3.6.2",
+		"prettier-plugin-tailwindcss": "^0.7.1",
 		"tailwindcss": "^4.1.13",
 		"typescript": "^5.9.2",
 		"vite": "^7.1.7",
