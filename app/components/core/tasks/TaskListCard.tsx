@@ -117,6 +117,7 @@ const TaskListCard = ({
 	];
 
 	switch (listColor) {
+		// white theme
 		case "white":
 			listBgColor = "bg-white";
 			listBorderColor =
@@ -143,6 +144,7 @@ const TaskListCard = ({
 			listTitleNewTaskHoverColor = "hover:bg-slate-100";
 			listTitleNewTaskActiveColor = "active:bg-slate-200";
 			break;
+		// peach theme
 		case "peach":
 			listBgColor = "bg-peach-500";
 			listBorderColor =
@@ -173,6 +175,107 @@ const TaskListCard = ({
 				"hover:bg-[color-mix(in_srgb,var(--color-peach-600),white_30%)]";
 			listTitleNewTaskActiveColor =
 				"active:bg-[color-mix(in_srgb,var(--color-peach-600),white_15%)]";
+			break;
+		// yellow theme
+		case "yellow":
+			listBgColor = "bg-yellow-50";
+			listBorderColor =
+				"color-mix(in srgb, var(--color-yellow-800), transparent 75%)";
+			listShadowColor =
+				"color-mix(in srgb, var(--color-yellow-800), transparent 75%)";
+			listDotsColor =
+				"radial-gradient(color-mix(in srgb, var(--color-yellow-600), transparent 80%) 1px,transparent 0)";
+
+			listTextColor =
+				"text-[color-mix(in_srgb,var(--color-yellow-600),var(--color-yellow-100)_25%)]";
+
+			listHoverColor =
+				"hover:bg-[color-mix(in_srgb,var(--color-yellow-50),var(--color-yellow-600)_10%)]";
+			listActiveColor =
+				"active:bg-[color-mix(in_srgb,var(--color-yellow-50),var(--color-yellow-600)_20%)]";
+			listDropdownOpenColor =
+				"group-data-[state='open']/dropdown:bg-[color-mix(in_srgb,var(--color-yellow-50),var(--color-yellow-600)_10%)]";
+
+			listTitleTextColor = "text-yellow-700";
+			listTitlePlaceholderTextColor = "placeholder:text-yellow-700/50";
+
+			listTitleRingHoverColor = "hover:ring-yellow-600/20";
+			listTitleRingFocusColor = "focus:ring-yellow-700/30";
+			listTitleRingPeerHoverColor = "peer-hover:ring-yellow-600/20";
+
+			listTitleNewTaskTextColor = "text-yellow-600";
+			listTitleNewTaskHoverColor =
+				"hover:bg-[color-mix(in_srgb,var(--color-yellow-50),var(--color-yellow-600)_10%)]";
+			listTitleNewTaskActiveColor =
+				"active:bg-[color-mix(in_srgb,var(--color-yellow-50),var(--color-yellow-600)_20%)]";
+			break;
+		// blue theme
+		case "blue":
+			listBgColor = "bg-sky-100";
+			listBorderColor =
+				"color-mix(in srgb, var(--color-sky-800), transparent 75%)";
+			listShadowColor =
+				"color-mix(in srgb, var(--color-sky-800), transparent 75%)";
+			listDotsColor =
+				"radial-gradient(color-mix(in srgb, var(--color-sky-600), transparent 80%) 1px,transparent 0)";
+
+			listTextColor =
+				"text-[color-mix(in_srgb,var(--color-sky-600),var(--color-sky-100)_25%)]";
+
+			listHoverColor =
+				"hover:bg-[color-mix(in_srgb,var(--color-sky-50),var(--color-sky-600)_15%)]";
+			listActiveColor =
+				"active:bg-[color-mix(in_srgb,var(--color-sky-50),var(--color-sky-600)_20%)]";
+			listDropdownOpenColor =
+				"group-data-[state='open']/dropdown:bg-[color-mix(in_srgb,var(--color-sky-50),var(--color-sky-600)_15%)]";
+
+			listTitleTextColor =
+				"text-[color-mix(in_srgb,var(--color-sky-600),var(--color-sky-900)_35%)]";
+			listTitlePlaceholderTextColor = "placeholder:text-sky-700/50";
+
+			listTitleRingHoverColor = "hover:ring-sky-600/20";
+			listTitleRingFocusColor = "focus:ring-sky-700/30";
+			listTitleRingPeerHoverColor = "peer-hover:ring-sky-600/20";
+
+			listTitleNewTaskTextColor = "text-sky-600";
+			listTitleNewTaskHoverColor =
+				"hover:bg-[color-mix(in_srgb,var(--color-sky-50),var(--color-sky-600)_15%)]";
+			listTitleNewTaskActiveColor =
+				"active:bg-[color-mix(in_srgb,var(--color-sky-50),var(--color-sky-600)_20%)]";
+			break;
+		// red theme
+		case "red":
+			listBgColor = "bg-red-200";
+			listBorderColor =
+				"color-mix(in srgb, var(--color-red-800), transparent 75%)";
+			listShadowColor =
+				"color-mix(in srgb, var(--color-red-800), transparent 75%)";
+			listDotsColor =
+				"radial-gradient(color-mix(in srgb, var(--color-red-600), transparent 80%) 1px,transparent 0)";
+
+			listTextColor =
+				"text-[color-mix(in_srgb,var(--color-red-600),var(--color-red-100)_25%)]";
+
+			listHoverColor =
+				"hover:bg-[color-mix(in_srgb,var(--color-red-200),var(--color-red-600)_15%)]";
+			listActiveColor =
+				"active:bg-[color-mix(in_srgb,var(--color-red-200),var(--color-red-600)_20%)]";
+			listDropdownOpenColor =
+				"group-data-[state='open']/dropdown:bg-[color-mix(in_srgb,var(--color-red-200),var(--color-red-600)_15%)]";
+
+			listTitleTextColor =
+				"text-[color-mix(in_srgb,var(--color-red-600),var(--color-red-900)_35%)]";
+			listTitlePlaceholderTextColor = "placeholder:text-red-700/50";
+
+			listTitleRingHoverColor = "hover:ring-red-600/20";
+			listTitleRingFocusColor = "focus:ring-red-700/30";
+			listTitleRingPeerHoverColor = "peer-hover:ring-sky-600/20";
+
+			listTitleNewTaskTextColor = "text-red-600";
+			listTitleNewTaskHoverColor =
+				"hover:bg-[color-mix(in_srgb,var(--color-red-200),var(--color-red-600)_15%)]";
+			listTitleNewTaskActiveColor =
+				"active:bg-[color-mix(in_srgb,var(--color-red-200),var(--color-red-600)_20%)]";
 			break;
 	}
 

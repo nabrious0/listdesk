@@ -78,7 +78,7 @@ const Task = ({ complete, name, id, deleteTask, taskListColor }: TaskProps) => {
 			taskNameRingFocusColor = "focus:ring-slate-400/50";
 
 			taskCompleteColor = "text-azure-500";
-			taskCompleteCrossGradient = "from-azure-600 to-azure-400";
+			taskCompleteCrossGradient = "from-azure-800 to-azure-400";
 			taskCompleteTextShadow = "text-shadow-azure-800/5";
 			taskCompleteCheckboxGradient = "from-azure-600 to-azure-300";
 			taskCompleteCheckboxShadowColor = "var(--color-azure-500)";
@@ -102,11 +102,90 @@ const Task = ({ complete, name, id, deleteTask, taskListColor }: TaskProps) => {
 			taskNameRingFocusColor = "focus:ring-peach-700/70";
 
 			taskCompleteColor = "text-peach-980";
-			taskCompleteCrossGradient = "from-peach-950 to-peach-800";
+			taskCompleteCrossGradient =
+				"from-[color-mix(in_srgb,var(--color-peach-950),black_45%)] to-peach-900";
 			taskCompleteTextShadow = "text-shadow-peach-950/5";
 			taskCompleteCheckboxGradient = "from-peach-950 to-peach-700";
 			taskCompleteCheckboxShadowColor = "var(--color-peach-950)";
 			taskCompleteCheckmarkShadowColor = "drop-shadow-peach-980";
+			break;
+		case "yellow":
+			taskIncompleteColor = "text-yellow-600";
+			taskIncompleteCheckboxBorderColor = "border-yellow-700/50";
+			taskIncompleteHoverCheckboxBorderColor = "hover:border-yellow-700/70";
+
+			taskMenuTextColor = "text-yellow-600";
+			taskMenuHoverColor =
+				"group-hover/menu:bg-[color-mix(in_srgb,var(--color-yellow-50),var(--color-yellow-600)_10%)]";
+			taskMenuActiveColor =
+				"group-active/menu:bg-[color-mix(in_srgb,var(--color-yellow-50),var(--color-yellow-600)_20%)]";
+			taskMenuOpenColor =
+				"group-data-[state='open']/dropdown:bg-[color-mix(in_srgb,var(--color-yellow-50),var(--color-yellow-600)_10%)]";
+
+			taskNamePlaceholderColor = "placeholder:text-yellow-700/50";
+			taskNameRingHoverColor = "hover:ring-yellow-600/20";
+			taskNameRingFocusColor = "focus:ring-yellow-700/30";
+
+			taskCompleteColor = "text-yellow-700";
+			taskCompleteCrossGradient =
+				"from-yellow-900 to-[color-mix(in_srgb,var(--color-yellow-600),white_10%)]";
+			taskCompleteTextShadow = "text-shadow-yellow-950/5";
+			taskCompleteCheckboxGradient =
+				"from-[color-mix(in_srgb,var(--color-yellow-600),var(--color-yellow-300)_5%)] to-[color-mix(in_srgb,var(--color-yellow-600),var(--color-yellow-100)_70%)]";
+			taskCompleteCheckboxShadowColor = "var(--color-yellow-900)";
+			taskCompleteCheckmarkShadowColor = "drop-shadow-yellow-900";
+			break;
+		case "blue":
+			taskIncompleteColor = "text-sky-600";
+			taskIncompleteCheckboxBorderColor = "border-sky-700/50";
+			taskIncompleteHoverCheckboxBorderColor = "hover:border-sky-700/70";
+
+			taskMenuTextColor = "text-sky-600";
+			taskMenuHoverColor =
+				"group-hover/menu:bg-[color-mix(in_srgb,var(--color-sky-50),var(--color-sky-600)_15%)]";
+			taskMenuActiveColor =
+				"group-active/menu:bg-[color-mix(in_srgb,var(--color-sky-50),var(--color-sky-600)_20%)]";
+			taskMenuOpenColor =
+				"group-data-[state='open']/dropdown:bg-[color-mix(in_srgb,var(--color-sky-50),var(--color-sky-600)_15%)]";
+
+			taskNamePlaceholderColor = "placeholder:text-sky-700/50";
+			taskNameRingHoverColor = "hover:ring-sky-600/20";
+			taskNameRingFocusColor = "focus:ring-sky-700/30";
+
+			taskCompleteColor = "text-sky-700";
+			taskCompleteCrossGradient =
+				"from-sky-900 to-[color-mix(in_srgb,var(--color-sky-600),white_10%)]";
+			taskCompleteTextShadow = "text-shadow-peach-950/5";
+			taskCompleteCheckboxGradient =
+				"from-[color-mix(in_srgb,var(--color-sky-600),var(--color-sky-300)_5%)] to-[color-mix(in_srgb,var(--color-sky-600),var(--color-sky-100)_70%)]";
+			taskCompleteCheckboxShadowColor = "var(--color-sky-900)";
+			taskCompleteCheckmarkShadowColor = "drop-shadow-sky-900";
+			break;
+		case "red":
+			taskIncompleteColor = "text-red-600";
+			taskIncompleteCheckboxBorderColor = "border-red-700/50";
+			taskIncompleteHoverCheckboxBorderColor = "hover:border-red-700/70";
+
+			taskMenuTextColor = "text-red-600";
+			taskMenuHoverColor =
+				"group-hover/menu:bg-[color-mix(in_srgb,var(--color-red-200),var(--color-red-600)_15%)]";
+			taskMenuActiveColor =
+				"group-active/menu:bg-[color-mix(in_srgb,var(--color-red-200),var(--color-red-600)_20%)]";
+			taskMenuOpenColor =
+				"group-data-[state='open']/dropdown:bg-[color-mix(in_srgb,var(--color-red-200),var(--color-red-600)_15%)]";
+
+			taskNamePlaceholderColor = "placeholder:text-red-700/50";
+			taskNameRingHoverColor = "hover:ring-red-600/20";
+			taskNameRingFocusColor = "focus:ring-red-700/30";
+
+			taskCompleteColor = "text-red-700";
+			taskCompleteCrossGradient =
+				"from-red-900 to-[color-mix(in_srgb,var(--color-red-600),white_10%)]";
+			taskCompleteTextShadow = "text-shadow-peach-950/5";
+			taskCompleteCheckboxGradient =
+				"from-red-700 to-[color-mix(in_srgb,var(--color-red-600),var(--color-red-100)_50%)]";
+			taskCompleteCheckboxShadowColor = "var(--color-red-900)";
+			taskCompleteCheckmarkShadowColor = "drop-shadow-red-900";
 			break;
 	}
 
