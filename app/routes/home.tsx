@@ -7,8 +7,12 @@ import Deck from "~/components/core/deck/Deck";
 
 export function meta({}: Route.MetaArgs) {
 	return [
-		{ title: "paperdesk" },
-		{ name: "description", content: "Welcome to React Router!" },
+		{ title: "ListDesk" },
+		{
+			name: "description",
+			content:
+				"ListDesk is (to be) an infinite, free-form canvas for organizing your life with movable to-do lists. Drag, drop, zoom, and arrange tasks anywhere. No strict layouts, just an open desk where you can think visually.",
+		},
 	];
 }
 
