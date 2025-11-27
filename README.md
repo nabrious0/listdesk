@@ -24,7 +24,7 @@ Alternatively, you can follow the installation instructions below to run ListDes
 
 ### Installation Instructions
 ```
-git clone https://github.com/nabrious0/listdesk/listdesk.git
+git clone https://github.com/nabrious0/listdesk.git
 cd listdesk
 npm install
 npm run dev
