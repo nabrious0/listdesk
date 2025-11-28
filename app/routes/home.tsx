@@ -4,6 +4,7 @@ import { useState } from "react";
 import { PlusIcon } from "@phosphor-icons/react/dist/ssr";
 import { AnimatePresence, motion, spring } from "motion/react";
 import Deck from "~/components/core/deck/Deck";
+import Canvas from "~/components/core/canvas/Canvas";
 
 export function meta({}: Route.MetaArgs) {
 	return [
@@ -21,41 +22,9 @@ export function loader({ context }: Route.LoaderArgs) {
 }
 
 export default function Home({ loaderData }: Route.ComponentProps) {
-	const [list, setList] = useState<{ id: string }[]>([]);
-	const [zIndices, setZIndices] = useState<{ [key: string]: number }>({});
-	const [zCounter, setZCounter] = useState(1);
-	const [nextId, setNextId] = useState(1);
-
-	const bringToFront = (id: string) => {
-		setZIndices((prev) => ({
-			...prev,
-			[id]: zCounter,
-		}));
-		setZCounter((prev) => prev + 1);
-	};
-
-	const newList = () => {
-		setList((prev) => [...prev, { id: String(nextId) }]);
-		setNextId((prev) => prev + 1);
-	};
-
-	const deleteTaskList = (taskListId: string) => {
-		setList((prev) => prev.filter((i) => i.id !== String(taskListId)));
-	};
 	return (
 		<>
-			<AnimatePresence>
-				{list.map((item) => (
-					<TaskListCard
-						key={item.id}
-						id={item.id}
-						zIndex={zIndices[item.id] || 0}
-						bringToFront={bringToFront}
-						deleteTaskList={deleteTaskList}
-					/>
-				))}
-			</AnimatePresence>
-			<Deck newList={newList} />
+			<Canvas />
 		</>
 	);
 }

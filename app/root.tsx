@@ -9,7 +9,8 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
-
+import Canvas from "~/components/core/canvas/Canvas";
+import Deck from "~/components/core/deck/Deck";
 export const links: Route.LinksFunction = () => [
 	{ rel: "preconnect", href: "https://fonts.googleapis.com" },
 	{
@@ -33,25 +34,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 				<Links />
 			</head>
 			<body className="h-full select-none">
-				{/* prettier-ignore */}
-				<div 
-					className="
-						fixed
-						inset-0
-						min-h-full
-						bg-slate-100
-						bg-[radial-gradient(var(--color-slate-300)_1px,transparent_0)] 
-						bg-size-[40px_40px] 
-						bg-position-[-19px_-19px]
-						cursor-grab
-						active:cursor-grabbing
-					"
-					style={{
-						boxShadow: "inset 0 0 1000000px color-mix(in srgb, var(--color-slate-600), transparent 80%)"
-					}}
-				>
-					{children}
-				</div>
+				{children}
 				<ScrollRestoration />
 				<Scripts />
 			</body>

@@ -13,7 +13,7 @@ import {
 	TrashIcon,
 } from "@phosphor-icons/react";
 import Task from "./Task";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type Ref } from "react";
 import { AnimatePresence, color, motion, number } from "motion/react";
 import Draggable from "react-draggable";
 import { DropdownMenu } from "radix-ui";
@@ -23,13 +23,17 @@ import {
 	DropdownMenuRoot,
 	DropdownMenuSubTrigger,
 } from "~/components/dropdown/DropdownMenu";
-import { col, div } from "motion/react-client";
+import { canvas, col, div } from "motion/react-client";
 
 interface TaskListCardProps {
 	id: string;
 	zIndex: number;
 	bringToFront: (id: string) => void;
 	deleteTaskList: (id: string) => void;
+
+	wrapperHeight: number;
+	wrapperWidth: number;
+	canvasPosition: React.RefObject<{ x: number; y: number }>;
 }
 
 const TaskListCard = ({
@@ -37,6 +41,9 @@ const TaskListCard = ({
 	zIndex,
 	bringToFront,
 	deleteTaskList,
+	wrapperHeight,
+	wrapperWidth,
+	canvasPosition,
 }: TaskListCardProps) => {
 	const [list, setList] = useState<{ id: string }[]>([]);
 	const [taskListName, setTaskListName] = useState("New Task List");
@@ -65,7 +72,7 @@ const TaskListCard = ({
 		setListColor("white");
 
 		const rect = cardParentRef.current.getBoundingClientRect();
-		cardParentRef.current.style.transform = `translate(${window.innerWidth / 2 - rect.width / 2}px, ${window.innerHeight / 2 - rect.height / 2}px)`;
+		cardParentRef.current.style.transform = `translate(${wrapperWidth / 2 - rect.width / 2 - canvasPosition.current.x}px, ${wrapperHeight / 2 - rect.height / 2 - canvasPosition.current.y}px)`;
 	}, [ready]);
 
 	// task list colors
@@ -295,8 +302,8 @@ const TaskListCard = ({
 	const handleMouseMove = (e: MouseEvent) => {
 		if (!draggingRef.current || !cardParentRef.current) return;
 
-		const newX = e.clientX - offsetRef.current.x;
-		const newY = e.clientY - offsetRef.current.y;
+		const newX = e.clientX - offsetRef.current.x - canvasPosition.current.x;
+		const newY = e.clientY - offsetRef.current.y - canvasPosition.current.y;
 
 		positionRef.current = { x: newX, y: newY };
 		cardParentRef.current.style.transform = `translate(${newX}px, ${newY}px)`;
@@ -353,11 +360,11 @@ const TaskListCard = ({
 													top-0
 													inset-x-0
 													h-13
-													rounded-t-[inherit] 
-													cursor-grab 
+													rounded-t-[inherit]
+													cursor-grab
 													active:cursor-grabbing
 													opacity-0
-													bg-size-[10px_10px] 
+													bg-size-[10px_10px]
 													bg-position-[-19px_-19px]
 													transition-all ease-linear
 													duration-75
@@ -369,10 +376,10 @@ const TaskListCard = ({
 												}}
 												onMouseDown={handleMouseDown}
 											/>
-											<textarea 
-												placeholder="Task List Name" 
-												value={taskListName} 
-												onChange={(e) => { setTaskListName(e.target.value); }} 
+											<textarea
+												placeholder="Task List Name"
+												value={taskListName}
+												onChange={(e) => { setTaskListName(e.target.value); }}
 												className={`${listBgColor} ${listTitleTextColor} ${listTitlePlaceholderTextColor} ${listTitleRingHoverColor} ${listTitleRingFocusColor} ${listTitleRingPeerHoverColor} relative z-20 resize-none text-xl field-sizing-content max-w-full py-1 px-3 rounded-sm ring-2 ring-transparent transition-all ease-linear font-semibold focus:outline-0`}
 											/>
 										</div>
@@ -416,12 +423,12 @@ const TaskListCard = ({
 																					<div className="me-6">
 																						{color}
 																					</div>
-																					<div 
+																					<div
 																						style={{
 																							opacity: (listColor === color.toLocaleLowerCase() ? "1" : "0"),
 																							boxShadow:
 																								"inset 0 0 0 1px rgb(255,255,255,15%), inset 0 0 3px 2px rgb(255,255,255,10%), 0 1px 1px rgb(0,0,0,4%), 0 4px 4px color-mix(in srgb, var(--color-azure-500), transparent 90%)",
-																						}} 
+																						}}
 																						className="bg-linear-to-t ms-auto h-5 w-5 flex justify-center items-center text-white rounded-full border border-black/30 bg-azure-500 to-azure-300 bg-origin-border">
 																						<div className="drop-shadow-sm text-xs">
 																							<CheckFatIcon weight="fill"/>

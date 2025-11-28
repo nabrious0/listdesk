@@ -1,6 +1,7 @@
 import { PlusIcon } from "@phosphor-icons/react";
 import { motion, spring } from "motion/react";
 import { DropdownMenu } from "radix-ui";
+import { useEffect, useState } from "react";
 import Button from "~/components/core/form/Button";
 
 interface DeckProps {
@@ -8,6 +9,15 @@ interface DeckProps {
 }
 
 const Deck = ({ newList }: DeckProps) => {
+	const [deckYPosition, setDeckYPosition] = useState(0);
+
+	useEffect(() => {
+		const screenHeight = window.innerHeight;
+
+		setDeckYPosition(screenHeight);
+	}, []);
+
+	useEffect(() => {}, []);
 	return (
 		<>
 			<div className="fixed inset-x-0 bottom-0 z-[9999999999999999999999] flex items-center justify-center">
