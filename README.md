@@ -1,9 +1,9 @@
 ## ListDesk
 
-ListDesk is (to be) an infinite, free-form canvas for organizing your life with movable to-do lists. Drag, drop, zoom, and arrange tasks anywhere. No strict layouts, just an open desk where you can think visually.
+ListDesk is (to be) an huge, free-form canvas for organizing your life with movable to-do lists. Drag, drop, zoom, and arrange tasks anywhere. No strict layouts, just an open desk where you can think visually.
 
 > [!note]
-> Currently, you can do all of the above except zoom and the desk isn't infinite yet.
+> Currently, you can do all of the above except zoom.
 
 ## ⭐ Features
 
