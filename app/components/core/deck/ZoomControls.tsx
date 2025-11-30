@@ -1,5 +1,5 @@
 import { MinusIcon } from "@phosphor-icons/react";
-import { PlusIcon } from "@phosphor-icons/react/dist/ssr";
+import { Minus, PlusIcon } from "@phosphor-icons/react/dist/ssr";
 import { useEffect, useRef, useState } from "react";
 
 interface ZoomControlsProps {}
@@ -50,14 +50,15 @@ const ZoomControls = ({}: ZoomControlsProps) => {
 					bg-origin-border
 					px-1
 					text-neutral-800
-					text-shadow-transparent
+					text-shadow-2xs
+					text-shadow-white
 				"
 				style={{
   							boxShadow: `inset 0 0 0 1px rgb(255,255,255,20%), inset 0 0 3px 2px rgb(255,255,255,10%), 0 1px 1px rgb(0,0,0, 20%), 0 6px 4px rgb(0,0,0,10%)`,
   						}}
 			>
 				<button className="flex cursor-pointer justify-center items-center text-slate-600 transition-all ease-linear rounded-full text-base h-7 w-7 hover:bg-slate-500/10 active:bg-slate-500/20">
-				  <MinusIcon weight="bold"/>
+		      <div className="drop-shadow-xxs drop-shadow-white"><MinusIcon weight="bold"/></div>
 				</button>
 				<div className="relative flex flex-col h-7">
   				<input
@@ -65,7 +66,7 @@ const ZoomControls = ({}: ZoomControlsProps) => {
   					value={zoomValue}
             type="number"
   					onChange={(e) => {setZoomValue(e.target.value)}}
-  					className="appearance-none [-moz-appearance:textfield] [&::-webkit-outer-spin-button,&::-webkit-inner-spin-button]:appearance-none pe-6 grow cursor-pointer rounded-md px-2 font-semibold text-slate-600 outline-0 transition-colors ease-linear hover:bg-slate-500/10 focus:cursor-text focus:hover:bg-transparent active:bg-slate-500/20 focus:active:bg-transparent"
+  					className="text-shadow-2xs text-shadow-white appearance-none [-moz-appearance:textfield] [&::-webkit-outer-spin-button,&::-webkit-inner-spin-button]:appearance-none pe-6 grow cursor-pointer rounded-md px-2 font-semibold text-slate-600 outline-0 transition-colors ease-linear hover:bg-slate-500/10 focus:cursor-text focus:hover:bg-transparent active:bg-slate-500/20 focus:active:bg-transparent"
   				/>
           <div className="pointer-events-none absolute end-0 flex justify-center items-center h-7 w-7 font-bold text-slate-500/80">
             %
@@ -75,7 +76,7 @@ const ZoomControls = ({}: ZoomControlsProps) => {
   				</div>
 				</div>
 				<button className="flex cursor-pointer justify-center items-center text-slate-600 transition-all ease-linear rounded-full text-base h-7 w-7 hover:bg-slate-500/10 active:bg-slate-500/20">
-				  <PlusIcon weight="bold"/>
+		      <div className="drop-shadow-xxs drop-shadow-white"><PlusIcon weight="bold"/></div>
 				</button>
 			</div>
 		</>
