@@ -24,6 +24,8 @@ import {
 	DropdownMenuSubTrigger,
 } from "~/components/dropdown/DropdownMenu";
 import { canvas, col, div } from "motion/react-client";
+import AutosizeTextarea from "~/components/core/tasks/form/TaskListName";
+import TaskListName from "~/components/core/tasks/form/TaskListName";
 
 interface TaskListCardProps {
 	id: string;
@@ -353,7 +355,7 @@ const TaskListCard = ({
 							>
 								<div className="ms-2 me-1.5 mb-2 pt-4">
 									<div className="flex w-full gap-4">
-										<div className="me-auto min-w-0">
+										<div className="me-auto min-w-0 w-full">
 											<div
 												className="
 													absolute
@@ -370,22 +372,18 @@ const TaskListCard = ({
 													duration-75
 													hover:opacity-100
 													peer
+													z-50
 												"
 												style={{
 													backgroundImage: `${listDotsColor}`
 												}}
 												onMouseDown={handleMouseDown}
 											/>
-											<textarea
-												placeholder="Task List Name"
-												value={taskListName}
-												onChange={(e) => { setTaskListName(e.target.value); }}
-												className={`${listBgColor} ${listTitleTextColor} ${listTitlePlaceholderTextColor} ${listTitleRingHoverColor} ${listTitleRingFocusColor} ${listTitleRingPeerHoverColor} relative z-20 resize-none text-xl field-sizing-content max-w-full py-1 px-3 rounded-sm ring-2 ring-transparent transition-all ease-linear font-semibold focus:outline-0`}
-											/>
+											<TaskListName placeholder="Task List Name" value={taskListName} className={`${listBgColor} ${listTitleTextColor} ${listTitlePlaceholderTextColor} ${listTitleRingHoverColor} ${listTitleRingFocusColor} ${listTitleRingPeerHoverColor} relative z-20 resize-none text-xl max-w-full py-1 px-3 rounded-sm ring-2 ring-transparent transition-shadow ease-linear font-semibold focus:outline-0`} onChange={(e) => { setTaskListName(e.target.value)}}/>
 										</div>
 										<div className="ms-auto">
 											<DropdownMenuRoot trigger={
-												<div className={`${listBgColor} ${listHoverColor} ${listActiveColor} ${listDropdownOpenColor} ${listTitleNewTaskTextColor} relative z-20 cursor-pointer text-lg flex justify-center items-center h-[38px] w-[38px] rounded-md transition-all ease-linear`}>
+												<div className={`${listBgColor} ${listHoverColor} ${listActiveColor} ${listDropdownOpenColor} ${listTitleNewTaskTextColor} relative z-60 cursor-pointer text-lg flex justify-center items-center h-[38px] w-[38px] rounded-md transition-all ease-linear`}>
 													<DotsThreeOutlineVerticalIcon weight="fill"/>
 												</div>
 											}>

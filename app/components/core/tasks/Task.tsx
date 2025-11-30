@@ -8,6 +8,7 @@ import {
 } from "@phosphor-icons/react";
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
+import TaskName from "~/components/core/tasks/form/TaskName";
 import {
 	DropdownMenuContent,
 	DropdownMenuItem,
@@ -28,7 +29,6 @@ const Task = ({ complete, name, id, deleteTask, taskListColor }: TaskProps) => {
 	const [lineTops, setLineTops] = useState<number[]>([]);
 	const mirrorRef = useRef<HTMLDivElement>(null);
 	const taskTextareaRef = useRef<HTMLTextAreaElement>(null);
-	const [strikeWidth, setStrikeWidth] = useState<number>();
 
 	// update task list color scheme on task list theme change
 
@@ -214,11 +214,7 @@ const Task = ({ complete, name, id, deleteTask, taskListColor }: TaskProps) => {
 		setLineTops(tops);
 	}, [text]);
 
-	useEffect(() => {
-		if (!taskTextareaRef.current) return;
-
-		setStrikeWidth(taskTextareaRef.current.offsetWidth);
-	}, [text]);
+	const [strikeWidth, setStrikeWidth] = useState<number>();
 
 	// keep task menu visible if its menu is open
 
@@ -280,14 +276,14 @@ const Task = ({ complete, name, id, deleteTask, taskListColor }: TaskProps) => {
 				)}
 				<div className="relative w-full min-w-0 font-semibold">
 					<div className="relative flex">
-						<textarea
-							ref={taskTextareaRef}
+						<TaskName
 							value={text}
 							onChange={(e) => {
 								setText(e.target.value);
 							}}
+							onWidthChange={setStrikeWidth}
 							placeholder="Task Name"
-							className={`${isComplete ? `${taskCompleteColor} ${taskCompleteTextShadow} text-shadow-sm` : `${taskIncompleteColor}`} field-sizing-content min-h-5 max-w-full resize-none rounded-sm px-1 py-px text-sm leading-[18px] wrap-break-word ring-2 ring-transparent transition-all ease-linear focus:outline-0 ${taskNamePlaceholderColor} ${taskNameRingHoverColor} ${taskNameRingFocusColor}`}
+							className={`${isComplete ? `${taskCompleteColor} ${taskCompleteTextShadow} text-shadow-sm` : `${taskIncompleteColor}`} min-h-5 max-w-full resize-none rounded-sm px-1 py-px text-sm leading-[18px] wrap-break-word ring-2 ring-transparent transition-[box-shadow,color] ease-linear focus:outline-0 ${taskNamePlaceholderColor} ${taskNameRingHoverColor} ${taskNameRingFocusColor}`}
 						/>
 						<AnimatePresence>
 							{isComplete && (
